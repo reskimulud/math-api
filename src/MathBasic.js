@@ -22,6 +22,8 @@ const MathBasic = {
     if (typeof a !== 'number' || typeof b !== 'number') {
       throw new Error('fungsi subtract hanya menerima parameter bertipe number');
     }
+
+    return a - b;
   },
   multiply: () => { },
   divide: () => { }

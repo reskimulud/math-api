@@ -48,5 +48,13 @@ describe('A MathBaseic', () => {
       expect(() => MathBasic.subtract(true, {})).toThrowError();
       expect(() => MathBasic.subtract(null, false)).toThrowError();
     });
+
+    it('should return the difference of 2 numbers', () => {
+      expect(MathBasic.subtract(1, 2)).toEqual(-1);
+      expect(MathBasic.subtract(5, 3)).toEqual(2);
+      expect(MathBasic.subtract(3, 5)).toEqual(-2);
+      expect(MathBasic.subtract(10, 5)).toEqual(5);
+      expect(MathBasic.subtract(88, 10)).toEqual(78);
+    });
   });
 });

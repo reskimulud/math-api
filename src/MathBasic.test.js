@@ -11,27 +11,27 @@ describe('A MathBaseic', () => {
     expect(MathBasic.multiply).toBeInstanceOf(Function);
     expect(MathBasic.divide).toBeInstanceOf(Function);
   });
-});
 
-describe('A add function', () => {
-  it('should throw error when not given 2 parameters', () => {
-    expect(() => MathBasic.add()).toThrowError();
-    expect(() => MathBasic.add(1)).toThrowError();
-    expect(() => MathBasic.add(1, 2, 3)).toThrowError();
-    expect(() => MathBasic.add(1, 2, 3, 4)).toThrowError();
-  });
+  describe('A add function', () => {
+    it('should throw error when not given 2 parameters', () => {
+      expect(() => MathBasic.add()).toThrowError();
+      expect(() => MathBasic.add(1)).toThrowError();
+      expect(() => MathBasic.add(1, 2, 3)).toThrowError();
+      expect(() => MathBasic.add(1, 2, 3, 4)).toThrowError();
+    });
 
-  it('should throw error when given parameter is not a number', () => {
-    expect(() => MathBasic.add('1', '2')).toThrowError();
-    expect(() => MathBasic.add(true, {})).toThrowError();
-    expect(() => MathBasic.add(null, false)).toThrowError();
-  });
+    it('should throw error when given parameter is not a number', () => {
+      expect(() => MathBasic.add('1', '2')).toThrowError();
+      expect(() => MathBasic.add(true, {})).toThrowError();
+      expect(() => MathBasic.add(null, false)).toThrowError();
+    });
 
-  it('should return the sum of 2 numbers', () => {
-    expect(MathBasic.add(1, 2)).toEqual(3);
-    expect(MathBasic.add(2, 3)).toEqual(5);
-    expect(MathBasic.add(3, 4)).toEqual(7);
-    expect(MathBasic.add(4, 5)).toEqual(9);
-    expect(MathBasic.add(8, 10)).toEqual(18);
+    it('should return the sum of 2 numbers', () => {
+      expect(MathBasic.add(1, 2)).toEqual(3);
+      expect(MathBasic.add(2, 3)).toEqual(5);
+      expect(MathBasic.add(3, 4)).toEqual(7);
+      expect(MathBasic.add(4, 5)).toEqual(9);
+      expect(MathBasic.add(8, 10)).toEqual(18);
+    });
   });
 });

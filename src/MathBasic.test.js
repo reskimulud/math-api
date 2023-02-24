@@ -71,5 +71,13 @@ describe('A MathBaseic', () => {
       expect(() => MathBasic.multiply(true, {})).toThrowError();
       expect(() => MathBasic.multiply(null, false)).toThrowError();
     });
+
+    it('should return the product of 2 numbers', () => {
+      expect(MathBasic.multiply(1, 2)).toEqual(2);
+      expect(MathBasic.multiply(5, 3)).toEqual(15);
+      expect(MathBasic.multiply(3, 5)).toEqual(15);
+      expect(MathBasic.multiply(10, 5)).toEqual(50);
+      expect(MathBasic.multiply(88, 10)).toEqual(880);
+    });
   });
 });

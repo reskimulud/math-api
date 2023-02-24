@@ -35,6 +35,8 @@ const MathBasic = {
     if (typeof a !== 'number' || typeof b !== 'number') {
       throw new Error('fungsi multiply hanya menerima parameter bertipe number');
     }
+
+    return a * b;
   },
   divide: () => { }
 };

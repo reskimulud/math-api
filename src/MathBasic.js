@@ -12,7 +12,11 @@ const MathBasic = {
 
     return a + b;
   },
-  subtract: () => { },
+  subtract: (...args) => {
+    if (args.length !== 2) {
+      throw new Error('fungsi subtract hanya menerima 2 parameter');
+    }
+  },
   multiply: () => { },
   divide: () => { }
 };

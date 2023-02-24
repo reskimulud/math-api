@@ -42,5 +42,11 @@ describe('A MathBaseic', () => {
       expect(() => MathBasic.subtract(1, 2, 3)).toThrowError();
       expect(() => MathBasic.subtract(1, 2, 3, 4)).toThrowError();
     });
+
+    it('should throw error when given parameter is not a number', () => {
+      expect(() => MathBasic.subtract('1', '2')).toThrowError();
+      expect(() => MathBasic.subtract(true, {})).toThrowError();
+      expect(() => MathBasic.subtract(null, false)).toThrowError();
+    });
   });
 });

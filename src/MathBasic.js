@@ -16,6 +16,12 @@ const MathBasic = {
     if (args.length !== 2) {
       throw new Error('fungsi subtract hanya menerima 2 parameter');
     }
+
+    const [a, b] = args;
+
+    if (typeof a !== 'number' || typeof b !== 'number') {
+      throw new Error('fungsi subtract hanya menerima parameter bertipe number');
+    }
   },
   multiply: () => { },
   divide: () => { }

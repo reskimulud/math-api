@@ -65,5 +65,11 @@ describe('A MathBaseic', () => {
       expect(() => MathBasic.multiply(1, 2, 3)).toThrowError();
       expect(() => MathBasic.multiply(1, 2, 3, 4)).toThrowError();
     });
+
+    it('should throw error when given parameter is not a number', () => {
+      expect(() => MathBasic.multiply('1', '2')).toThrowError();
+      expect(() => MathBasic.multiply(true, {})).toThrowError();
+      expect(() => MathBasic.multiply(null, false)).toThrowError();
+    });
   });
 });

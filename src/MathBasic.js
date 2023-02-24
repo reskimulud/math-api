@@ -4,7 +4,13 @@ const MathBasic = {
       throw new Error('fungsi add hanya menerima 2 parameter');
     }
 
-    return args[0] + args[1];
+    const [a, n] = args;
+
+    if (typeof a !== 'number' || typeof n !== 'number') {
+      throw new Error('fungsi add hanya menerima parameter bertipe number');
+    }
+
+    return a + b;
   },
   subtract: () => { },
   multiply: () => { },

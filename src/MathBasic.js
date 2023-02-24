@@ -41,7 +41,11 @@ const MathBasic = {
     return a * b;
   },
 
-  divide: () => { }
+  divide: (...args) => {
+    if (args.length !== 2) {
+      throw new Error('fungsi divide hanya menerima 2 parameter');
+    }
+  }
 };
 
 module.exports = MathBasic;

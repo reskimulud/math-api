@@ -80,4 +80,13 @@ describe('A MathBaseic', () => {
       expect(MathBasic.multiply(88, 10)).toEqual(880);
     });
   });
+
+  describe('A divide function', () => {
+    it('should throw error when not given 2 parameters', () => {
+      expect(() => MathBasic.divide()).toThrowError();
+      expect(() => MathBasic.divide(1)).toThrowError();
+      expect(() => MathBasic.divide(1, 2, 3)).toThrowError();
+      expect(() => MathBasic.divide(1, 2, 3, 4)).toThrowError();
+    });
+  });
 });

@@ -94,5 +94,13 @@ describe('A MathBaseic', () => {
       expect(() => MathBasic.divide(true, {})).toThrowError();
       expect(() => MathBasic.divide(null, false)).toThrowError();
     });
+
+    it('should return the quotient of 2 numbers', () => {
+      expect(MathBasic.divide(1, 2)).toEqual(0.5);
+      expect(MathBasic.divide(6, 3)).toEqual(2);
+      expect(MathBasic.divide(15, 5)).toEqual(3);
+      expect(MathBasic.divide(10, 5)).toEqual(2);
+      expect(MathBasic.divide(88, 10)).toEqual(8.8);
+    });
   });
 });

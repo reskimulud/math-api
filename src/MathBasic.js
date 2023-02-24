@@ -12,6 +12,7 @@ const MathBasic = {
 
     return a + b;
   },
+
   subtract: (...args) => {
     if (args.length !== 2) {
       throw new Error('fungsi subtract hanya menerima 2 parameter');
@@ -25,6 +26,7 @@ const MathBasic = {
 
     return a - b;
   },
+
   multiply: (...args) => {
     if (args.length !== 2) {
       throw new Error('fungsi multiply hanya menerima 2 parameter');
@@ -38,6 +40,7 @@ const MathBasic = {
 
     return a * b;
   },
+
   divide: () => { }
 };
 

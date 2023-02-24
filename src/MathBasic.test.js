@@ -26,4 +26,12 @@ describe('A add function', () => {
     expect(() => MathBasic.add(true, {})).toThrowError();
     expect(() => MathBasic.add(null, false)).toThrowError();
   });
+
+  it('should return the sum of 2 numbers', () => {
+    expect(MathBasic.add(1, 2)).toEqual(3);
+    expect(MathBasic.add(2, 3)).toEqual(5);
+    expect(MathBasic.add(3, 4)).toEqual(7);
+    expect(MathBasic.add(4, 5)).toEqual(9);
+    expect(MathBasic.add(8, 10)).toEqual(18);
+  });
 });

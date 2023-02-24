@@ -4,9 +4,9 @@ const MathBasic = {
       throw new Error('fungsi add hanya menerima 2 parameter');
     }
 
-    const [a, n] = args;
+    const [a, b] = args;
 
-    if (typeof a !== 'number' || typeof n !== 'number') {
+    if (typeof a !== 'number' || typeof b !== 'number') {
       throw new Error('fungsi add hanya menerima parameter bertipe number');
     }
 

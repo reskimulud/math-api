@@ -57,4 +57,13 @@ describe('A MathBaseic', () => {
       expect(MathBasic.subtract(88, 10)).toEqual(78);
     });
   });
+
+  describe('A multiply function', () => {
+    it('should throw error when not given 2 parameters', () => {
+      expect(() => MathBasic.multiply()).toThrowError();
+      expect(() => MathBasic.multiply(1)).toThrowError();
+      expect(() => MathBasic.multiply(1, 2, 3)).toThrowError();
+      expect(() => MathBasic.multiply(1, 2, 3, 4)).toThrowError();
+    });
+  });
 });

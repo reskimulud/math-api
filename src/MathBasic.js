@@ -45,6 +45,12 @@ const MathBasic = {
     if (args.length !== 2) {
       throw new Error('fungsi divide hanya menerima 2 parameter');
     }
+
+    const [a, b] = args;
+
+    if (typeof a !== 'number' || typeof b !== 'number') {
+      throw new Error('fungsi divide hanya menerima parameter bertipe number');
+    }
   }
 };
 

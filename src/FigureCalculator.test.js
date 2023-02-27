@@ -8,7 +8,7 @@ describe('A FigureCalcualator', () => {
     expect(figureCalculator).toHaveProperty('calculateRectangleArea');
     expect(figureCalculator).toHaveProperty('calculateTrianglePerimeter');
     expect(figureCalculator).toHaveProperty('calculateTriangleArea');
-    expect(figureCalculator.calculateRectanglePerimeter).toBeInstanceOf(Function);
+    expect(figureCalculator.calculateRectangelPerimeter).toBeInstanceOf(Function);
     expect(figureCalculator.calculateRectangleArea).toBeInstanceOf(Function);
     expect(figureCalculator.calculateTrianglePerimeter).toBeInstanceOf(Function);
     expect(figureCalculator.calculateTriangleArea).toBeInstanceOf(Function);

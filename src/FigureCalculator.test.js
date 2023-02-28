@@ -49,4 +49,14 @@ describe('A FigureCalcualator', () => {
       expect(spyMultiply).toHaveBeenCalledWith(2, 30);
     });
   });
+
+  describe('a calculateRectangleArea function', () => {
+    it('should throw error when not given 2 parameters', () => {
+      const figureCalculator = new FigureCalcualator({});
+
+      expect(() => figureCalculator.calculateRectangleArea()).toThrowError();
+      expect(() => figureCalculator.calculateRectangleArea(1)).toThrowError();
+      expect(() => figureCalculator.calculateRectangleArea(1, 2, 3)).toThrowError();
+    });
+  });
 });

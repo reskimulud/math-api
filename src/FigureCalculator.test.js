@@ -119,12 +119,21 @@ describe('A FigureCalcualator', () => {
   });
 
   describe('a calculateTriangleArea function', () => {
-    it('should throw error when not given 3 parameters', () => {
+    it('should throw error when not given 2 parameters', () => {
       const figureCalculator = new FigureCalcualator({});
 
       expect(() => figureCalculator.calculateTriangleArea()).toThrowError();
       expect(() => figureCalculator.calculateTriangleArea(1)).toThrowError();
+      expect(() => figureCalculator.calculateTriangleArea(1, 2, 3)).toThrowError();
       expect(() => figureCalculator.calculateTriangleArea(1, 2, 3, 4)).toThrowError();
+    });
+
+    it('should throw error when given with non-number parameters', () => {
+      const figureCalculator = new FigureCalcualator({});
+
+      expect(() => figureCalculator.calculateTriangleArea(1, true, 3)).toThrowError();
+      expect(() => figureCalculator.calculateTriangleArea({}, [], 3)).toThrowError();
+      expect(() => figureCalculator.calculateTriangleArea(null, '2', 3)).toThrowError();
     });
   });
 });

@@ -51,8 +51,14 @@ class FigureCalcualator {
   }
 
   calculateTriangleArea(...args) {
-    if (args.length !== 3) {
-      throw new Error('fungsi hanya menerima tiga parameter');
+    if (args.length !== 2) {
+      throw new Error('fungsi hanya menerima dua parameter');
+    }
+
+    const [base, hight] = args;
+
+    if (typeof base !== 'number' || typeof hight !== 'number') {
+      throw new Error('fungsi hanya menerima dua parameter bertipe number');
     }
   }
 }

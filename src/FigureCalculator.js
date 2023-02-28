@@ -35,7 +35,12 @@ class FigureCalcualator {
     return this.#mathBasic.multiply(length, width);
   }
 
-  calculateTrianglePerimeter() { }
+  calculateTrianglePerimeter(...args) {
+    if (args.length !== 3) {
+      throw new Error('fungsi hanya menerima tiga parameter');
+    }
+  }
+
   calculateTriangleArea() { }
 }
 

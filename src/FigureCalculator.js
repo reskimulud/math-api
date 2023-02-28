@@ -39,6 +39,12 @@ class FigureCalcualator {
     if (args.length !== 3) {
       throw new Error('fungsi hanya menerima tiga parameter');
     }
+
+    const [sideA, sideB, sideC] = args;
+
+    if (typeof sideA !== 'number' || typeof sideB !== 'number' || typeof sideC !== 'number') {
+      throw new Error('fungsi hanya menerima tiga parameter bertipe number');
+    }
   }
 
   calculateTriangleArea() { }

@@ -22,5 +22,13 @@ describe('A FigureCalcualator', () => {
       expect(() => figureCalculator.calculateRectangelPerimeter(1)).toThrowError();
       expect(() => figureCalculator.calculateRectangelPerimeter(1, 2, 3)).toThrowError();
     });
+
+    it('should throw error when given with non-number parameters', () => {
+      const figureCalculator = new FigureCalcualator({});
+
+      expect(() => figureCalculator.calculateRectangelPerimeter(1, true)).toThrowError();
+      expect(() => figureCalculator.calculateRectangelPerimeter({}, [])).toThrowError();
+      expect(() => figureCalculator.calculateRectangelPerimeter(null, '2')).toThrowError();
+    });
   });
 });

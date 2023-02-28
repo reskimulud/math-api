@@ -60,6 +60,9 @@ class FigureCalcualator {
     if (typeof base !== 'number' || typeof hight !== 'number') {
       throw new Error('fungsi hanya menerima dua parameter bertipe number');
     }
+
+    // formula : (base * hight) / 2
+    return this.#mathBasic.divide(this.#mathBasic.multiply(base, hight), 2);
   }
 }
 

@@ -131,9 +131,26 @@ describe('A FigureCalcualator', () => {
     it('should throw error when given with non-number parameters', () => {
       const figureCalculator = new FigureCalcualator({});
 
-      expect(() => figureCalculator.calculateTriangleArea(1, true, 3)).toThrowError();
-      expect(() => figureCalculator.calculateTriangleArea({}, [], 3)).toThrowError();
-      expect(() => figureCalculator.calculateTriangleArea(null, '2', 3)).toThrowError();
+      expect(() => figureCalculator.calculateTriangleArea(1, true)).toThrowError();
+      expect(() => figureCalculator.calculateTriangleArea({}, [])).toThrowError();
+      expect(() => figureCalculator.calculateTriangleArea(null, '2')).toThrowError();
+    });
+
+    it('should return correct value based on triangle area formula', () => {
+      // Arrange
+      const base = 20;
+      const height = 10;
+      const spyMultiply = jest.spyOn(MathBasic, 'multiply');
+      const spyDivide = jest.spyOn(MathBasic, 'divide');
+      const figureCalculator = new FigureCalcualator(MathBasic);
+
+      // Act
+      const result = figureCalculator.calculateTriangleArea(base, height);
+
+      // Assert
+      expect(result).toEqual(100);
+      expect(spyMultiply).toHaveBeenCalledWith(base, height);
+      expect(spyDivide).toHaveBeenCalledWith(200, 2);
     });
   });
 });

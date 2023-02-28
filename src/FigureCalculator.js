@@ -30,6 +30,9 @@ class FigureCalcualator {
     if (typeof length !== 'number' || typeof width !== 'number') {
       throw new Error('fungsi hanya menerima dua parameter bertipe number');
     }
+
+    // formula : length * width
+    return this.#mathBasic.multiply(length, width);
   }
 
   calculateTrianglePerimeter() { }

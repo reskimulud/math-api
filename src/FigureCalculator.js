@@ -15,6 +15,9 @@ class FigureCalcualator {
     if (typeof length !== 'number' || typeof width !== 'number') {
       throw new Error('fungsi hanya menerima dua parameter bertipe number');
     }
+
+    // formula : 2 * (length + width)
+    return this.#mathBasic.multiply(2, this.#mathBasic.add(length, width));
   }
 
   calculateRectangleArea() { }

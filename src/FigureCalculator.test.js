@@ -58,5 +58,13 @@ describe('A FigureCalcualator', () => {
       expect(() => figureCalculator.calculateRectangleArea(1)).toThrowError();
       expect(() => figureCalculator.calculateRectangleArea(1, 2, 3)).toThrowError();
     });
+
+    it('should throw error when given with non-number parameters', () => {
+      const figureCalculator = new FigureCalcualator({});
+
+      expect(() => figureCalculator.calculateRectangleArea(1, true)).toThrowError();
+      expect(() => figureCalculator.calculateRectangleArea({}, [])).toThrowError();
+      expect(() => figureCalculator.calculateRectangleArea(null, '2')).toThrowError();
+    });
   });
 });

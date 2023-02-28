@@ -50,7 +50,11 @@ class FigureCalcualator {
     return this.#mathBasic.add(this.#mathBasic.add(sideA, sideB), sideC);
   }
 
-  calculateTriangleArea() { }
+  calculateTriangleArea(...args) {
+    if (args.length !== 3) {
+      throw new Error('fungsi hanya menerima tiga parameter');
+    }
+  }
 }
 
 module.exports = FigureCalcualator;

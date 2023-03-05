@@ -45,4 +45,26 @@ describe('A HTTP server', () => {
       expect(spySubtract).toBeCalledWith(a, b);
     });
   });
+
+  describe('when GET /multiply', () => {
+    it('should respond with a status code of 200 and the payload value is multiplication result of a and b correctly', async () => {
+      // Arrange
+      const a = 10;
+      const b = 20;
+      const spyMultiply = jest.spyOn(MathBasic, 'multiply');
+      const server = createServer({ mathBasic: MathBasic });
+
+      // Act
+      const response = await server.inject({
+        method: 'GET',
+        url: `/multiply/${a}/${b}`,
+      });
+
+      // Assert
+      const responseJson = JSON.parse(response.payload);
+      expect(response.statusCode).toEqual(200);
+      expect(responseJson.value).toEqual(a * b);
+      expect(spyMultiply).toBeCalledWith(a, b);
+    });
+  });
 });

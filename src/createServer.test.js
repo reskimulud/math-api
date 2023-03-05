@@ -1,4 +1,5 @@
 const createServer = require('./createServer');
+const FigureCalcualator = require('./FigureCalculator');
 const MathBasic = require('./MathBasic');
 
 describe('A HTTP server', () => {
@@ -87,6 +88,29 @@ describe('A HTTP server', () => {
       expect(response.statusCode).toEqual(200);
       expect(responseJson.value).toEqual(a / b);
       expect(spyDivide).toBeCalledWith(a, b);
+    });
+  });
+
+  describe('when GET /rectangle/perimeter', () => {
+    it('should respond with a status code of 200 and the payload value is the result of calculating the perimeter of the rectangle correctly', async () => {
+      // Arrange
+      const a = 10;
+      const b = 20;
+      const figureCalcualator = new FigureCalcualator(MathBasic);
+      const spyPerimeter = jest.spyOn(figureCalcualator, 'calculateRectangelPerimeter');
+      const server = createServer({ figureCalcualator });
+
+      // Act
+      const response = await server.inject({
+        method: 'GET',
+        url: `/rectangle/perimeter/${a}/${b}`,
+      });
+
+      // Assert
+      const responseJson = JSON.parse(response.payload);
+      expect(response.statusCode).toEqual(200);
+      expect(responseJson.value).toEqual(2 * (a + b));
+      expect(spyPerimeter).toBeCalledWith(a, b);
     });
   });
 });
